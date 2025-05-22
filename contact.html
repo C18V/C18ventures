@@ -3,83 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C18 Ventures - Contact</title>
+  <title>Contact - C18 Ventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: #1A1A2E; color: #E0E0E0; line-height: 1.6; }
-    .header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #1A1A2E; position: fixed; width: 100%; top: 0; z-index: 10; }
-    .header .logo { font-size: 1.5rem; font-weight: bold; color: #6B48FF; }
-    #menu-toggle { display: none; }
-    .hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: #E0E0E0; }
-    .nav { display: flex; gap: 20px; }
-    .nav a { color: #E0E0E0; font-size: 1rem; transition: color 0.3s; text-decoration: none; }
-    .nav a:hover { color: #6B48FF; }
-    .form-section { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 100px 40px 40px; }
-    .form-container { background: #252A4A; padding: 40px; border-radius: 10px; width: 100%; max-width: 500px; }
-    .form-container h2 { color: #6B48FF; margin-bottom: 20px; text-align: center; }
-    .form-group { margin-bottom: 1rem; }
-    label { display: block; margin-bottom: 0.3rem; color: #E0E0E0; }
-    input, select, textarea { width: 100%; padding: 0.8rem; border: 1px solid #3D4060; border-radius: 5px; background: #2E2E4D; color: #E0E0E0; font-size: 1rem; }
-    input:focus, select:focus, textarea:focus { border-color: #6B48FF; outline: none; }
-    textarea { resize: vertical; min-height: 100px; }
-    button { width: 100%; padding: 0.8rem; background: #6B48FF; color: #FFFFFF; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
-    button:hover { background: #5A3CD9; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body { background: #1e1b29; color: #f0f0f0; line-height: 1.6; }
+
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #1e1b29; position: fixed; width: 100%; top: 0; z-index: 10; }
+    .header img { height: 40px; }
+    .nav a { color: #f0f0f0; margin-left: 20px; text-decoration: none; }
+
+    .form-section { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 120px 20px 40px; }
+    .form-container { background: #fff; color: #222; padding: 30px; border-radius: 10px; width: 100%; max-width: 500px; }
+
+    .form-container h2 { text-align: center; margin-bottom: 20px; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; }
+    input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+
+    button { width: 100%; padding: 10px; background: #2a2141; color: white; border: none; border-radius: 25px; }
+
     @media (max-width: 768px) {
-      .hamburger { display: block; }
-      .nav { display: none; position: absolute; top: 60px; right: 40px; background: #1A1A2E; flex-direction: column; padding: 10px 20px; border-radius: 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
-      #menu-toggle:checked + .hamburger + .nav { display: flex; }
-      .form-section { padding: 80px 20px 20px; }
+      .nav a { margin-left: 10px; }
       .form-container { padding: 20px; }
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <div class="logo">C18 Ventures</div>
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <div class="logo"><img src="https://i.postimg.cc/R3WH6Gch/IMG-0098.png" alt="Logo" /></div>
     <div class="nav">
-      <a href="index.html#home">Home</a>
+      <a href="index.html">Home</a>
       <a href="index.html#services">Services</a>
       <a href="index.html#about">About</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
+
   <div class="form-section" id="contact">
     <div class="form-container">
       <h2>Get in Touch</h2>
-      <form>
+      <form action="https://formspree.io/f/xkgravbn" method="POST">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="text" id="name" name="name" required />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Your Email" required />
+          <input type="email" id="email" name="email" required />
         </div>
         <div class="form-group">
           <label for="interest">Interest</label>
-          <select id="interest" required>
+          <select id="interest" name="interest" required>
             <option value="">Select an Option</option>
-            <option value="partnership">Partnership</option>
+            <option value="trading">Trading</option>
             <option value="investment">Investment</option>
-            <option value="mentorship">Mentorship</option>
+            <option value="consultation">Consultation</option>
             <option value="other">Other</option>
           </select>
         </div>
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Your Message" required></textarea>
+          <textarea id="message" name="message" rows="5" required></textarea>
         </div>
         <button type="submit">Submit</button>
       </form>
     </div>
   </div>
-  <script>
-    document.querySelector("form").addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thank you! We’ll get back to you soon at " + new Date().toLocaleString("en-US", { timeZone: "Africa/Lagos" }));
-    });
-  </script>
 </body>
 </html>
